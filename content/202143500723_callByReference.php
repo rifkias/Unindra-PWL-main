@@ -1,7 +1,7 @@
 <?php 
     function nilaiKuadrat(&$nilai) {
         $nilai = $nilai * $nilai;
-        return $hasil;
+        return $nilai;
     }
     
     $bil = 3;
