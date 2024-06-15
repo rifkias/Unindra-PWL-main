@@ -2,7 +2,6 @@
   $uri = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <form action="<?php echo $uri ?>" method="get">
-    <input type="hidden" name="page" value="whileLoop">
     <input type="text" name="digit">
     <button type="submit">Submit</button>
 </form>

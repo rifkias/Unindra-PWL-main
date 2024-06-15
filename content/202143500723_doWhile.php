@@ -3,7 +3,6 @@
 ?>
 <p> </p>
 <form action="<?php echo $uri ?>" method="get">
-    <input type="hidden" name="page" value="doWhile">
     <input type="text" name="digit">
     <button type="submit">Submit</button>
 </form>

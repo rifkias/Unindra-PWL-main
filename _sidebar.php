@@ -1,6 +1,10 @@
 <?php 
     // $uri = "http://pwl.test/p4";
-    $uri =  parse_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]",PHP_URL_PATH);
+    $uri =  (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
+    $basePath = basename(dirname($_SERVER['PHP_SELF']));
+    if($basePath <> 'index.php'){
+        $uri = $uri."/".$basePath;
+    }
 ?>
 
 <div id="layoutSidenav_nav">
@@ -8,7 +12,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Daftar Folder</div>
-                <a class="nav-link" href="<?php echo $uri ."?page=biodata"?>">
+                <a class="nav-link" href="<?php echo $uri ."/biodata"?>">
                     Biodata
                 </a>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#p2"
@@ -18,13 +22,13 @@
                 </a>
                 <div class="collapse" id="p2" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<?php echo $uri . "?page=helloWorld" ?>">Hello World</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=variable" ?>">Variable</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=object" ?>">Object</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=konstanta" ?>">Konstanta</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=aritmatika" ?>">Operator Aritmatika</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=perbandingan" ?>">Operator Perbandingan</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=string" ?>">Operator String</a>
+                        <a class="nav-link" href="<?php echo $uri . "/helloWorld" ?>">Hello World</a>
+                        <a class="nav-link" href="<?php echo $uri . "/variable" ?>">Variable</a>
+                        <a class="nav-link" href="<?php echo $uri . "/object" ?>">Object</a>
+                        <a class="nav-link" href="<?php echo $uri . "/konstanta" ?>">Konstanta</a>
+                        <a class="nav-link" href="<?php echo $uri . "/aritmatika" ?>">Operator Aritmatika</a>
+                        <a class="nav-link" href="<?php echo $uri . "/perbandingan" ?>">Operator Perbandingan</a>
+                        <a class="nav-link" href="<?php echo $uri . "/string" ?>">Operator String</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#p3"
@@ -34,13 +38,13 @@
                 </a>
                 <div class="collapse" id="p3" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<?php echo $uri . "?page=kondisiIf" ?>">Kondisi If</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=kondisiIfElse" ?>">Kondisi ElseIf</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=switch" ?>">Kondisi Switch</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=whileLoop" ?>">While Loop</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=doWhile" ?>">Do While Loop</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=forLoop" ?>">For Loop</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=foreachLoop" ?>">Foreach Loop</a>
+                        <a class="nav-link" href="<?php echo $uri . "/kondisiIf" ?>">Kondisi If</a>
+                        <a class="nav-link" href="<?php echo $uri . "/kondisiIfElse" ?>">Kondisi ElseIf</a>
+                        <a class="nav-link" href="<?php echo $uri . "/switch" ?>">Kondisi Switch</a>
+                        <a class="nav-link" href="<?php echo $uri . "/whileLoop" ?>">While Loop</a>
+                        <a class="nav-link" href="<?php echo $uri . "/doWhile" ?>">Do While Loop</a>
+                        <a class="nav-link" href="<?php echo $uri . "/forLoop" ?>">For Loop</a>
+                        <a class="nav-link" href="<?php echo $uri . "/foreachLoop" ?>">Foreach Loop</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#p4"
@@ -50,11 +54,25 @@
                 </a>
                 <div class="collapse" id="p4" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<?php echo $uri . "?page=function" ?>">Function</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=functionParameter" ?>">Function Dengan Parameter</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=optionalArugment" ?>">Optional Argument</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=callByValue" ?>">Call By Value</a>
-                        <a class="nav-link" href="<?php echo $uri . "?page=callByReference" ?>">Call By Reference</a>
+                        <a class="nav-link" href="<?php echo $uri . "/function" ?>">Function</a>
+                        <a class="nav-link" href="<?php echo $uri . "/functionParameter" ?>">Function Dengan Parameter</a>
+                        <a class="nav-link" href="<?php echo $uri . "/optionalArugment" ?>">Optional Argument</a>
+                        <a class="nav-link" href="<?php echo $uri . "/callByValue" ?>">Call By Value</a>
+                        <a class="nav-link" href="<?php echo $uri . "/callByReference" ?>">Call By Reference</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#p5"
+                    aria-expanded="false" aria-controls="p5">
+                    P5
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="p5" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="<?php echo $uri . "/function" ?>">Function</a>
+                        <a class="nav-link" href="<?php echo $uri . "/functionParameter" ?>">Function Dengan Parameter</a>
+                        <a class="nav-link" href="<?php echo $uri . "/optionalArugment" ?>">Optional Argument</a>
+                        <a class="nav-link" href="<?php echo $uri . "/callByValue" ?>">Call By Value</a>
+                        <a class="nav-link" href="<?php echo $uri . "/callByReference" ?>">Call By Reference</a>
                     </nav>
                 </div>
             </div>
