@@ -78,6 +78,15 @@ class phpRouting{
                 case "callByReference":
                     $filename = "./content/".$this->npm."_callByReference.php";
                     break;
+                case "formBiodata":
+                    $filename = "./content/".$this->npm."_formBiodata.php";
+                    break;
+                case "formTable":
+                    $filename = "./content/".$this->npm."_formTable.php";
+                    break;
+                case "convertNilai":
+                    $filename = "./content/".$this->npm."_convertNilai.php";
+                    break;
                 default:
                 $filename = "./content/".$this->npm."_helloworld.php";
             }
@@ -86,6 +95,16 @@ class phpRouting{
             $filename = "./content/".$this->npm."_helloworld.php";
         }
         return $filename;
+    }
+
+    public function showScript(){
+        $arr = ["formBiodata","biodata",'formTable','convertNilai'];
+        $res = true;
+        if(in_array($this->getPath(),$arr)){
+            $res = false;
+        }
+
+        return $res;
     }
 
 }

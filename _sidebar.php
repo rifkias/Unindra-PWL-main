@@ -68,11 +68,9 @@
                 </a>
                 <div class="collapse" id="p5" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<?php echo $uri . "/function" ?>">Function</a>
-                        <a class="nav-link" href="<?php echo $uri . "/functionParameter" ?>">Function Dengan Parameter</a>
-                        <a class="nav-link" href="<?php echo $uri . "/optionalArugment" ?>">Optional Argument</a>
-                        <a class="nav-link" href="<?php echo $uri . "/callByValue" ?>">Call By Value</a>
-                        <a class="nav-link" href="<?php echo $uri . "/callByReference" ?>">Call By Reference</a>
+                        <a class="nav-link" href="<?php echo $uri . "/formBiodata" ?>">Form Biodata</a>
+                        <a class="nav-link" href="<?php echo $uri . "/formTable" ?>">Form Table</a>
+                        <a class="nav-link" href="<?php echo $uri . "/convertNilai" ?>">Form Convert Nilai</a>
                     </nav>
                 </div>
             </div>
