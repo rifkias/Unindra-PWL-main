@@ -1,12 +1,25 @@
 <?php 
 class phpRouting{
     private $npm = "202143500723";
-    function getPath(){
+    public function getPath(){
         $url = $_SERVER['REQUEST_URI'];
         // Get Last Path of URI
-        $url = preg_replace('~.*/~', '', $url);
+        // $url = preg_replace('~.*/~', '', $url);
         $explode = explode("?",$url);
         $url = $explode[0];
+        // Check Basename 
+        $paths = explode("/",$url);
+        foreach($paths as $key => $path){
+            if($path == $this->getBasename()){
+                array_splice($paths,0,$key+1);
+            }
+        }
+
+        if(count($paths) == 1){
+            $url = $paths[0];
+        }else{
+            $url = implode("/",$paths);
+        }
         return $url;
     }
 
@@ -103,7 +116,6 @@ class phpRouting{
         if(in_array($this->getPath(),$arr)){
             $res = false;
         }
-
         return $res;
     }
 
